@@ -1,0 +1,11 @@
+mysql:
+  image: mysql:8
+  rootPassword: root
+  database: clientes
+  servicePort: 3306
+backend:
+  image: pixelian/clientes-back:latest
+  port: 3000
+frontend:
+  image: pixelian/clientes-front:latest
+  port: 80

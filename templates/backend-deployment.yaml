@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clientes-back
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clientes-back
+  template:
+    metadata:
+      labels:
+        app: clientes-back
+    spec:
+      containers:
+        - name: clientes-back
+          image: {{ .Values.backend.image }}
+          env:
+            - name: DB_HOST
+              value: mysql
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_USER
+              value: root
+            - name: DB_PASSWORD
+            # Root no tiene contraseña, por lo que se deja vacía
+              value: 
+            - name: DB_NAME
+              value: clientes
+          ports:
+            - containerPort: {{ .Values.backend.port }}

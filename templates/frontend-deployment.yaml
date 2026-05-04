@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clientes-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clientes-front
+  template:
+    metadata:
+      labels:
+        app: clientes-front
+    spec:
+      containers:
+        - name: clientes-front
+          image: {{ .Values.frontend.image }}
+          ports:
+            - containerPort: 80
