@@ -7,5 +7,5 @@ backend:
   image: pixelian/clientes-back:latest
   port: 3000
 frontend:
-  image: pixelian/clientes-front:latest
+  image: pixelian/clientes-front:v2
   port: 80
