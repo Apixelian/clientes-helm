@@ -9,3 +9,12 @@ backend:
 frontend:
   image: pixelian/clientes-front:latest
   port: 80
+
+# Correr el helm chart
+
+# minikube service clientes-front
+
+# helm upgrade clientes .
+
+# docker build --no-cache -t pixelian/clientes-front:v10 .
+# docker push pixelian/clientes-front:v10
